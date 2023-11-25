@@ -1,6 +1,6 @@
 ﻿namespace Common
 {
-    internal interface IPerson
+    public interface IPerson
     {
         int Id { get; }
         string Name { get; }
