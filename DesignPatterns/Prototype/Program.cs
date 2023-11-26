@@ -1,10 +1,9 @@
 ﻿using Prototype;
 
-Console.Title = "Builder";
-
+Console.Title = "Prototype";
 
 Car audi = new("Audi", "A6", 250, 500);
-Car anotherAudi = audi.Clone();
+Car anotherAudi = audi.DeepClone();
 
 Console.WriteLine(audi.ToString());
 Console.WriteLine(anotherAudi.ToString());

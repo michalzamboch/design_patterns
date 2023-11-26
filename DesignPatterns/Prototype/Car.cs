@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace Prototype
 {
-    internal class Car : IPrototype
+    internal class Car : IPrototype<Car>
     {
         private readonly string brand;
         private readonly string name;
@@ -21,9 +16,15 @@ namespace Prototype
             this.horsePower = horsePower;
         }
 
-        public Car Clone()
+        public Car DeepClone()
         {
             return new Car(brand, name, topSpeed, horsePower);
+        }
+
+        public Car ShallowClone()
+        {
+            object clone = MemberwiseClone();
+            return (Car)clone;
         }
 
         public override string ToString()
